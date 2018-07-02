@@ -33,7 +33,12 @@ module.exports = merge(common, {
                     }
                 }],
                 include: srcPath
-            }
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader?modules', 'sass-loader?modules'],
+                include: srcPath
+            },
         ]
     },
     plugins: [
