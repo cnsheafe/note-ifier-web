@@ -1,4 +1,4 @@
-///<reference types="webpack-env" />
+/// <reference types="webpack-env" />
 // ^^^Use @typings for webpack such as "module"
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
