@@ -36,7 +36,17 @@ module.exports = merge(common, {
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader?modules', 'sass-loader?modules'],
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]__[local]--[hash:base64:7]',
+                        }
+                    },
+                    'sass-loader?modules',
+                ],
                 include: srcPath
             },
         ]
