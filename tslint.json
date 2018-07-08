@@ -4,4 +4,8 @@
         "tslint-react",
         "tslint-config-prettier"
     ],
+    "rules": {
+        "ordered-imports": false,
+        "no-implicit-dependencies": false
+    }
 }

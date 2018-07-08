@@ -8,15 +8,42 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest --watch",
+    "coverage": "jest --coverage",
+    "posttest": "tslint -p tsconfig.json"
+  },
+  "jest": {
+    "setupFiles": ["./__jestsetup.js"],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss|sass|less)$": "identity-obj-proxy"
+    }
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.11",
+    "@types/jest": "^23.1.4",
     "@types/react-hot-loader": "^4.1.0",
     "@types/webpack-env": "^1.13.6",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "fork-ts-checker-webpack-plugin": "^0.4.2",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.3.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.0",
     "prettier": "^1.13.7",
@@ -24,6 +51,7 @@
     "redux-devtools-extension": "^2.13.5",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
+    "ts-jest": "^23.0.0",
     "ts-loader": "^4.4.2",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
