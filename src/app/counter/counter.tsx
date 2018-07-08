@@ -6,14 +6,17 @@ export default class CounterComponent extends React.Component {
     counter: 0,
   }
 
-  public increment = (evt: React.MouseEvent<HTMLButtonElement>) =>
+  public increment = () => {
     this.setState({ counter: this.state.counter + 1 })
+  }
 
-  public decrement = (evt: React.MouseEvent<HTMLButtonElement>) =>
+  public decrement = () => {
     this.setState({ counter: this.state.counter - 1 })
+  }
 
   public render() {
     const { counter } = this.state
+
     return (
       <div>
         Counter: {counter}
